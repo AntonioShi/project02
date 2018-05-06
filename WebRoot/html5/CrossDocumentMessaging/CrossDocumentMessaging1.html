@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="../jquery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript"> 
+	var idNum=0;
+	$(document).ready(function(){      //页面中的DOM已经装载完成时，执行的代码      
+		$("form").on("submit",function(){
+			message=$("input[type='text']").val();
+			var winIframe=window.frames[0];//这里必须获得iframe窗口的window对象
+			winIframe.postMessage(message, '*');//使用postMessage向iframe发送消息
+			window.frames[1].postMessage(message, 'http://localhost:8080');
+			
+			return false;
+		});
+	});  	
+
+
+</script>
+</head>
+
+<body>
+    <form>
+       <input type="text" required autofocus /><p>
+       <input type="submit" value="确认" />
+    </form>
+    <p>
+    <iframe src="b.html"></iframe>
+	<iframe src="c.html"></iframe>
+
+ <p> <p> <p> <p> <p>
+HTML5提供了在网页文档之间互相接收与发送信息的功能。使用这个功能，只要获取到网页所在窗口对象的实例，不仅同源（域+端口号）的web网页之间可以互相通信，甚至可以实现跨域通信。
+首先，要想接受从其他的窗口那里发过来的消息，就必须对窗口对象的message事件进行监视。
+使用window对象的postMessage方法向其他窗口发送消息。
+</body>
+</html>

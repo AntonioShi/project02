@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="project02:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/project02_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="project02/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="project02" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="mysql-connector-java-5.1.25-bin.jar" module-name="project02" />
+          <element id="library" level="module" name="gson-2.3.jar" module-name="project02" />
+          <element id="library" level="module" name="commons-io-2.2.jar" module-name="project02" />
+          <element id="library" level="module" name="commons-fileupload-1.3.1.jar" module-name="project02" />
+          <element id="library" level="module" name="commons-beanutils-1.9.1.jar" module-name="project02" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

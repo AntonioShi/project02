@@ -1,0 +1,505 @@
+@import url( ../../../css/common.css );
+BODY {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial,Console,Verdana,Courier New; BACKGROUND: url(../images/body_bg.jpg) repeat-x 50% top
+}
+P {
+	PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px
+}
+A {
+	TEXT-DECORATION: none; COLOR: #f90
+}
+A:hover {
+	TEXT-DECORATION: none; COLOR: #200
+}
+#container {
+	BACKGROUND: url(../images/head_bg.jpg) no-repeat center -25px
+}
+.csdn-toolbar .container {
+	MAX-WIDTH: 1200px; WIDTH: 96%; MARGIN: 0px auto
+}
+#header {
+	HEIGHT: 36px; WIDTH: 980px; PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 35px; PADDING-LEFT: 0px; MARGIN: 0px auto; PADDING-RIGHT: 0px
+}
+#blog_title H2 {
+	COLOR: #036; FONT: bold 32px/32px 'Microsoft YaHei'; MARGIN: 0px 25px 0px 0px
+}
+#blog_title H3 {
+	COLOR: #036; PADDING-BOTTOM: 0px; PADDING-TOP: 2px; FONT: 15px/30px 'Microsoft YaHei'; PADDING-LEFT: 0px; MARGIN-LEFT: 70px; PADDING-RIGHT: 0px
+}
+#blog_title A {
+	COLOR: #fff
+}
+#blog_title A:hover {
+	TEXT-DECORATION: none; COLOR: #def
+}
+#navigator {
+	MAX-WIDTH: 1200px; HEIGHT: 42px; WIDTH: 96%; PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 100px; PADDING-LEFT: 0px; CLEAR: both; MARGIN: 0px auto; DISPLAY: inline-block; PADDING-RIGHT: 0px
+}
+.navigator {
+	TEXT-ALIGN: right
+}
+.navigator:after {
+	HEIGHT: 0px; CONTENT: "."; CLEAR: both; DISPLAY: block; VISIBILITY: hidden
+}
+.navigator UL {
+	FLOAT: right
+}
+.navigator LI {
+	FLOAT: left; MARGIN: 0px 5px; DISPLAY: inline
+}
+.navigator LI A {
+	CURSOR: pointer; TEXT-DECORATION: none; HEIGHT: 26px; BACKGROUND: url(../../../images/btn_pub_nav.gif) no-repeat left 0px; COLOR: #666; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 12px/26px Arial, Helvetica, sans-serif; PADDING-LEFT: 10px; DISPLAY: inline-block; PADDING-RIGHT: 0px
+}
+.navigator LI A SPAN {
+	HEIGHT: 16px; BACKGROUND: url(../../../images/btn_pub_nav.gif) no-repeat right -26px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; PADDING-LEFT: 0px; DISPLAY: inline-block; LINE-HEIGHT: 16px; PADDING-RIGHT: 10px
+}
+.navigator LI A SPAN IMG {
+	VERTICAL-ALIGN: middle; MARGIN: 0px 4px 0px 0px
+}
+#body {
+	MAX-WIDTH: 1200px; WIDTH: 96%; TEXT-ALIGN: left; MARGIN: 10px auto; DISPLAY: inline-block
+}
+#body:after {
+	HEIGHT: 0px; CONTENT: "."; CLEAR: both; DISPLAY: block; VISIBILITY: hidden
+}
+.panel_head {
+	HEIGHT: 30px; BACKGROUND: url(../images/tit_bg.jpg) repeat-x 50% top; COLOR: #333; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: bold 12px/30px Arial; PADDING-LEFT: 5px; CLEAR: both; PADDING-RIGHT: 5px; TEXT-INDENT: 5px
+}
+.panel {
+	BORDER-TOP: #80dfea 1px solid; BORDER-RIGHT: #80dfea 1px solid; BACKGROUND: #f4fbfb; BORDER-BOTTOM: #80dfea 1px solid; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; PADDING-LEFT: 1px; MARGIN: 0px 0px 10px; BORDER-LEFT: #80dfea 1px solid; PADDING-RIGHT: 1px
+}
+.side .panel_body {
+	PADDING-BOTTOM: 4px; PADDING-TOP: 4px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px
+}
+.panel_body LI {
+	COLOR: #666; MARGIN: 8px 0px
+}
+.panel_body LI SPAN {
+	
+}
+.panel_body LI A {
+	
+}
+#main {
+	OVERFLOW: hidden; WIDTH: 100%; FLOAT: right; MARGIN-LEFT: -210px
+}
+#main .main {
+	BORDER-TOP: #80dfea 1px solid; BORDER-RIGHT: #80dfea 1px solid; BACKGROUND: #fff; MIN-WIDTH: 700px; BORDER-BOTTOM: #80dfea 1px solid; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; PADDING-LEFT: 1px; MARGIN-LEFT: 210px; BORDER-LEFT: #80dfea 1px solid; PADDING-RIGHT: 1px; _float: right
+}
+#notice {
+	MARGIN: 5px 10px
+}
+.notice {
+	BORDER-TOP: #f8cc7e 1px dashed; BORDER-RIGHT: #f8cc7e 1px dashed; BACKGROUND: url(../../../images/ico_notice.png) #fffce7 no-repeat 5px center; BORDER-BOTTOM: #f8cc7e 1px dashed; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; FONT: 12px/22px Arial; PADDING-LEFT: 20px; MARGIN: 10px; BORDER-LEFT: #f8cc7e 1px dashed; PADDING-RIGHT: 4px; _background: #fffce7 url(../../../images/ico_notice.gif) no-repeat 5px center
+}
+.notice A {
+	COLOR: #ff5a00
+}
+.list_item {
+	BACKGROUND: url(../images/line_1.gif) repeat-x 50% bottom; CLEAR: both; DISPLAY: inline-block
+}
+.list_item:after {
+	HEIGHT: 0px; CONTENT: "."; CLEAR: both; DISPLAY: block; VISIBILITY: hidden
+}
+.list {
+	MARGIN: 20px 20px 0px
+}
+.article_title {
+	COLOR: #000; FONT: 20px/30px 'Microsoft YaHei'; MARGIN: 5px 0px; DISPLAY: block
+}
+.article_title:after {
+	HEIGHT: 0px; CONTENT: "."; CLEAR: both; DISPLAY: block; VISIBILITY: hidden
+}
+.article_title A {
+	COLOR: #333
+}
+.article_title A:hover {
+	COLOR: #666
+}
+.article_title .ico {
+	HEIGHT: 19px; WIDTH: 19px; MARGIN: 0px 2px 0px 0px; DISPLAY: inline-block
+}
+.article_title .ico_type_Original {
+	VERTICAL-ALIGN: middle; BACKGROUND: url(../../../images/ico_Original.gif) no-repeat 0px 0px
+}
+.article_title .ico_type_Repost {
+	VERTICAL-ALIGN: middle; BACKGROUND: url(../../../images/ico_Repost.gif) no-repeat 0px 0px
+}
+.article_title .ico_type_Translated {
+	VERTICAL-ALIGN: middle; BACKGROUND: url(../../../images/ico_Translated.gif) no-repeat 0px 0px
+}
+.article_title H1 {
+	VERTICAL-ALIGN: middle; FONT: 20px/30px 'Microsoft YaHei'; DISPLAY: inline
+}
+.article_description {
+	COLOR: #666; FONT: 14px/24px Arial
+}
+.article_manage {
+	COLOR: #999; PADDING-BOTTOM: 5px; TEXT-ALIGN: right; PADDING-TOP: 5px; FONT: 12px/24px Arial; PADDING-LEFT: 0px; PADDING-RIGHT: 0px
+}
+.article_manage SPAN {
+	MARGIN: 0px 5px
+}
+.article_manage .link_postdate {
+	MARGIN: 0px 5px 0px 0px
+}
+.article_manage .link_view {
+	BACKGROUND: url(../../../images/ico_view.png) no-repeat left center; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 14px; PADDING-RIGHT: 0px; _background: url(../../../images/ico_view.gif) no-repeat left center
+}
+.article_manage .link_comments {
+	BACKGROUND: url(../../../images/ico_comm.png) no-repeat left center; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 14px; PADDING-RIGHT: 0px; _background: url(../../../images/ico_comm.gif) no-repeat left center
+}
+.article_manage .link_categories {
+	FLOAT: left
+}
+.list_view {
+	PADDING-BOTTOM: 5px; PADDING-TOP: 5px; PADDING-LEFT: 0px; MARGIN: 0px 20px; PADDING-RIGHT: 0px
+}
+.list_view .article_title {
+	OVERFLOW: hidden; HEIGHT: 30px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis; FLOAT: left; FONT: 14px/30px Arial; MARGIN: 0px; DISPLAY: inline
+}
+.list_view .article_title:after {
+	CONTENT: "..."
+}
+.list_view .article_title H3 {
+	FONT: 12px/30px Arial
+}
+.list_view .article_title H1 {
+	FONT: 12px/30px Arial
+}
+.list_view .article_manage {
+	WHITE-SPACE: nowrap; FLOAT: right; PADDING-BOTTOM: 0px !important; TEXT-ALIGN: right !important; PADDING-TOP: 0px !important; PADDING-LEFT: 0px !important; DISPLAY: inline; LINE-HEIGHT: 30px !important; PADDING-RIGHT: 0px !important
+}
+.list_view .article_description {
+	DISPLAY: none !important
+}
+.list_view .article_manage SPAN {
+	MARGIN: 0px
+}
+.details {
+	MARGIN: 20px
+}
+.details .article_content {
+	FONT: 14px/26px Arial; MARGIN: 20px 0px 0px
+}
+.article_next_prev {
+	FLOAT: left; COLOR: #666; PADDING-BOTTOM: 0px; PADDING-TOP: 10px; FONT: 14px/24px "Microsoft YaHei",Arial, Helvetica, sans-serif; PADDING-LEFT: 0px; CLEAR: both; MARGIN: 0px 0px 5px; DISPLAY: inline-block; PADDING-RIGHT: 0px
+}
+.article_next_prev LI {
+	LIST-STYLE-TYPE: none; OVERFLOW: hidden; PADDING-BOTTOM: 3px; PADDING-TOP: 0px; PADDING-LEFT: 0px; CLEAR: both; PADDING-RIGHT: 0px
+}
+.article_next_prev:after {
+	HEIGHT: 0px; CONTENT: "."; CLEAR: both; DISPLAY: block; VISIBILITY: hidden
+}
+.article_next_prev LI SPAN {
+	FONT-SIZE: 14px; HEIGHT: 26px; WIDTH: 52px; FLOAT: left; COLOR: #fff; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 27px; DISPLAY: block; PADDING-RIGHT: 0px; BACKGROUND-COLOR: #999999; MARGIN-RIGHT: 7px
+}
+.article_next_prev LI:hover SPAN {
+	BACKGROUND-COLOR: #c00
+}
+.article_next_prev LI.prev_article SPAN {
+	BACKGROUND-IMAGE: url(../images/blog-page-arr.png); BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 9px 8px
+}
+.article_next_prev LI.next_article SPAN {
+	BACKGROUND-IMAGE: url(../images/blog-page-arr.png); BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 9px -22px
+}
+.article_next_prev LI A {
+	FONT-SIZE: 14px; FLOAT: left; COLOR: #333333; DISPLAY: block
+}
+.article_next_prev LI A:link {
+	COLOR: #333
+}
+.article_next_prev LI A:visited {
+	COLOR: #333
+}
+.article_next_prev LI A:hover {
+	COLOR: #333
+}
+.article_next_prev LI:hover A {
+	COLOR: #c00
+}
+.article_next_prev LI:hover A:link {
+	COLOR: #c00
+}
+.article_next_prev LI:hover A:visited {
+	COLOR: #c00
+}
+.article_next_prev LI:hover A:hover {
+	COLOR: #c00
+}
+.commentform UL {
+	MARGIN: 0px
+}
+.commentform LI {
+	LIST-STYLE-TYPE: none; MARGIN: 0px
+}
+.ico_expert {
+	HEIGHT: 60px; WIDTH: 69px; BACKGROUND: url(../../../images/ico_expert.jpg) no-repeat 0px 0px; MARGIN: 0px auto; _background: none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="images/ico_expert.png")
+}
+#digg {
+	WIDTH: 182px; PADDING-BOTTOM: 15px; TEXT-ALIGN: center; PADDING-TOP: 30px; PADDING-LEFT: 0px; CLEAR: both; MARGIN: 0px auto; DISPLAY: inline-block; PADDING-RIGHT: 0px; _width: 188px
+}
+#digg:after {
+	HEIGHT: 0px; CONTENT: "."; CLEAR: both; DISPLAY: block; VISIBILITY: hidden
+}
+.digg {
+	OVERFLOW: hidden; HEIGHT: 72px; WIDTH: 72px; BACKGROUND: #ff7900; FLOAT: left; TEXT-ALIGN: center; MARGIN: 0px 2px; DISPLAY: inline-block
+}
+.digg DT {
+	COLOR: #fff; PADDING-BOTTOM: 3px; PADDING-TOP: 12px; FONT: 27px/30px 'Microsoft YaHei'; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px
+}
+.digg DD {
+	COLOR: #f00; FONT: 12px/22px Arial; MARGIN: 0px
+}
+.digg_enable {
+	CURSOR: pointer; BACKGROUND: #ff7900; TEXT-ALIGN: center
+}
+.digg_disable {
+	BACKGROUND: #999; COLOR: #fff
+}
+.digg_disable DD {
+	COLOR: #fff
+}
+.pagelist {
+	COLOR: #666; PADDING-BOTTOM: 15px; TEXT-ALIGN: center; PADDING-TOP: 15px; FONT: 12px/24px Arial; PADDING-LEFT: 0px; CLEAR: both; PADDING-RIGHT: 0px
+}
+.pagelist A {
+	CURSOR: pointer; BORDER-TOP: #dbe5ee 1px solid; HEIGHT: 22px; BORDER-RIGHT: #dbe5ee 1px solid; BACKGROUND: #fff; BORDER-BOTTOM: #dbe5ee 1px solid; COLOR: #333; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 12px/22px Arial, Helvetica, sans-serif; PADDING-LEFT: 8px; MARGIN: 0px 2px; BORDER-LEFT: #dbe5ee 1px solid; DISPLAY: inline-block; PADDING-RIGHT: 8px
+}
+.pagelist STRONG {
+	BORDER-TOP-STYLE: none; TEXT-DECORATION: none; HEIGHT: 24px; BACKGROUND: #07519a; BORDER-BOTTOM-STYLE: none; FONT-WEIGHT: normal; COLOR: #fff; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 8px; MARGIN: 0px 3px; BORDER-LEFT-STYLE: none; DISPLAY: inline-block; LINE-HEIGHT: 24px; PADDING-RIGHT: 8px
+}
+.pagelist A:hover {
+	BORDER-TOP-STYLE: none; TEXT-DECORATION: none; HEIGHT: 24px; BACKGROUND: #07519a; BORDER-BOTTOM-STYLE: none; COLOR: #fff; BORDER-RIGHT-STYLE: none; MARGIN: 0px 3px; BORDER-LEFT-STYLE: none; LINE-HEIGHT: 24px
+}
+.pagelist A.select {
+	CURSOR: default
+}
+#side {
+	OVERFLOW: hidden; WIDTH: 200px; FLOAT: left; LINE-HEIGHT: 120%
+}
+#side .side {
+	
+}
+#side A {
+	COLOR: #000
+}
+#side A:hover {
+	COLOR: #200
+}
+#panel_Profile {
+	
+}
+#panel_Profile SPAN {
+	COLOR: #333
+}
+.ico_expert {
+	BACKGROUND: url(../images/ico_expert.png) no-repeat
+}
+#blog_userface {
+	PADDING-BOTTOM: 10px; TEXT-ALIGN: center; PADDING-TOP: 10px; PADDING-LEFT: 10px; MARGIN: 0px 0px 5px; PADDING-RIGHT: 10px
+}
+#blog_userface IMG {
+	MAX-WIDTH: 160px; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid; BORDER-BOTTOM: #ddd 1px solid; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; PADDING-LEFT: 2px; BORDER-LEFT: #ddd 1px solid; PADDING-RIGHT: 2px
+}
+#blog_userface SPAN {
+	FONT-WEIGHT: bold; TEXT-ALIGN: center; DISPLAY: block
+}
+#blog_medal {
+	TEXT-ALIGN: center
+}
+#blog_rank {
+	BACKGROUND: url(../images/line_1.gif) repeat-x 50% bottom; COLOR: #666; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; PADDING-LEFT: 5px; MARGIN: 5px; DISPLAY: inline-block; PADDING-RIGHT: 5px
+}
+#blog_rank:after {
+	HEIGHT: 0px; CONTENT: "."; CLEAR: both; DISPLAY: block; VISIBILITY: hidden
+}
+#blog_rank LI {
+	
+}
+#blog_rank LI SPAN {
+	COLOR: #333
+}
+#blog_statistics {
+	COLOR: #666; MARGIN: 10px; DISPLAY: inline-block
+}
+#blog_statistics:after {
+	HEIGHT: 0px; CONTENT: "."; CLEAR: both; DISPLAY: block; VISIBILITY: hidden
+}
+#blog_statistics LI {
+	WIDTH: 100%; FLOAT: left; MARGIN: 4px 0px
+}
+#blog_statistics LI SPAN {
+	COLOR: #333
+}
+#blog_statistics LI A {
+	
+}
+#panel_Search {
+	
+}
+#panel_Search .panel_body:after {
+	HEIGHT: 0px; CONTENT: "."; CLEAR: both; DISPLAY: block; VISIBILITY: hidden
+}
+#panel_Search .panel_body SPAN {
+	FLOAT: left
+}
+#panel_Search .form_search {
+	OVERFLOW: hidden; BORDER-TOP: #cccccc 1px solid; HEIGHT: 24px; BORDER-RIGHT: #cccccc 1px solid; BACKGROUND: #fff; BORDER-BOTTOM: #cccccc 1px solid; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 3px; MARGIN: 10px 0px; BORDER-LEFT: #cccccc 1px solid; DISPLAY: block; PADDING-RIGHT: 3px
+}
+#panel_Search .panel_body .blogsearch {
+	BORDER-TOP: medium none; HEIGHT: 20px; BORDER-RIGHT: medium none; WIDTH: 140px; BORDER-BOTTOM: medium none; COLOR: #666666; MARGIN: 2px 5px 0px 0px; BORDER-LEFT: medium none
+}
+#btnSubmit {
+	OVERFLOW: hidden; CURSOR: pointer; BORDER-TOP: medium none; HEIGHT: 16px; BORDER-RIGHT: medium none; WIDTH: 16px; BACKGROUND: url(../images/ico_sear.gif) no-repeat 0px 0px; BORDER-BOTTOM: medium none; MARGIN: 5px 0px 0px; BORDER-LEFT: medium none; DISPLAY: inline-block; LINE-HEIGHT: 999px; TEXT-INDENT: -1000px
+}
+#panel_Category {
+	
+}
+#newcomments {
+	
+}
+#load_comments {
+	CURSOR: pointer; FONT-SIZE: 14px; BORDER-TOP: #ddd 1px solid; HEIGHT: 30px; FONT-FAMILY: "Î¢ÈíÑÅºÚ"; BORDER-RIGHT: #ddd 1px solid; BACKGROUND: url(../images/commentsbarbg.jpg) repeat-x 0px bottom; BORDER-BOTTOM: #ddd 1px solid; TEXT-ALIGN: center; MARGIN: 5px; BORDER-LEFT: #ddd 1px solid; DISPLAY: block; LINE-HEIGHT: 30px
+}
+#panel_Archive {
+	
+}
+#panel_Archive LI {
+	DISPLAY: inline-block
+}
+#panel_Archive LI:after {
+	HEIGHT: 0px; CONTENT: "."; CLEAR: both; DISPLAY: block; VISIBILITY: hidden
+}
+#panel_Archive .list_closed {
+	CURSOR: pointer; BACKGROUND: url(../../../images/arrow_down.gif) no-repeat left center; FLOAT: right; COLOR: #666; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 12px; PADDING-RIGHT: 0px
+}
+#panel_Archive .list_opended {
+	CURSOR: pointer; BACKGROUND: url(../../../images/arrow_up.gif) no-repeat left center; FLOAT: right; COLOR: #666; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 12px; PADDING-RIGHT: 0px
+}
+#archive_list {
+	MARGIN-BOTTOM: 5px; DISPLAY: inline-block
+}
+#archive_list:after {
+	HEIGHT: 0px; CONTENT: "."; CLEAR: both; DISPLAY: block; VISIBILITY: hidden
+}
+.comment_item FIELDSET {
+	BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid; BORDER-BOTTOM: #ddd 1px solid; COLOR: #999; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 10px; BORDER-LEFT: #ddd 1px solid; PADDING-RIGHT: 10px; BACKGROUND-COLOR: #f1f1f1
+}
+.comment_head {
+	BACKGROUND: #f8fcfb; COLOR: #888; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; PADDING-LEFT: 4px; CLEAR: both; PADDING-RIGHT: 4px
+}
+.commentform_title {
+	BACKGROUND: #f8fcfb; COLOR: #888; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; PADDING-LEFT: 4px; CLEAR: both; PADDING-RIGHT: 4px
+}
+.comment_head A {
+	COLOR: #369
+}
+.commentform_title A {
+	COLOR: #369
+}
+.comment_reply .comment_head {
+	BACKGROUND-COLOR: #ebf5f2
+}
+.comment_reply {
+	BACKGROUND-COLOR: #f8fcfc
+}
+.newcomment {
+	BORDER-TOP: #eee 1px solid; BORDER-RIGHT: #eee 1px solid; WIDTH: 90%; BORDER-BOTTOM: #eee 1px solid; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; PADDING-LEFT: 10px; MARGIN: 5px; BORDER-LEFT: #eee 1px solid; LINE-HEIGHT: 20px; PADDING-RIGHT: 10px; BACKGROUND-COLOR: #f6f6f6
+}
+.commentform_title {
+	FONT-SIZE: 14px; COLOR: #000
+}
+.commentform .comment_btn {
+	BORDER-TOP-STYLE: none; HEIGHT: 26px; WIDTH: 85px; BACKGROUND: url(../images/submit_bg.gif) no-repeat 0px 0px; BORDER-BOTTOM-STYLE: none; COLOR: #666; TEXT-ALIGN: center; FONT: 12px/26px Arial, Helvetica, sans-serif; BORDER-RIGHT-STYLE: none; MARGIN: 10px 0px 0px 90px; BORDER-LEFT-STYLE: none
+}
+.guest_link {
+	FONT-SIZE: 12px; BORDER-TOP: #dcf3e9 1px solid; BORDER-RIGHT: #dcf3e9 1px solid; BORDER-BOTTOM: #dcf3e9 1px solid; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; PADDING-LEFT: 10px; MARGIN: 10px; BORDER-LEFT: #dcf3e9 1px solid; PADDING-RIGHT: 10px; BACKGROUND-COLOR: #eef9f4
+}
+#main .panel_head {
+	BACKGROUND: url(../images/panel_head_bg.jpg) repeat-x; MARGIN: 5px 10px
+}
+#side #profile {
+	MARGIN-TOP: 0px
+}
+#baidu_clb_slot_117306 {
+	MARGIN-BOTTOM: 10px
+}
+.announce {
+	MARGIN: 0px 15px 10px
+}
+.commentform {
+	MARGIN: 0px 10px 10px
+}
+.commentform .panel_head {
+	MARGIN: 5px 0px
+}
+.digg_enable {
+	CURSOR: pointer; BACKGROUND: url(../images/digg_bg.gif) no-repeat 0px 0px; TEXT-ALIGN: center
+}
+.digg_disable {
+	CURSOR: pointer; BACKGROUND: #ff7900; TEXT-ALIGN: center
+}
+.medal_intro {
+	PADDING-TOP: 26px
+}
+.blog-associat-tag {
+	OVERFLOW: hidden; BACKGROUND: #f5f5f5; PADDING-BOTTOM: 10px; PADDING-TOP: 25px; PADDING-LEFT: 20px; CLEAR: both; MARGIN: 10px 0px 0px; PADDING-RIGHT: 20px
+}
+.blog-associat-tag DT {
+	FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; LINE-HEIGHT: 23px; PADDING-RIGHT: 0px
+}
+.blog-associat-tag DD {
+	FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; LINE-HEIGHT: 23px; PADDING-RIGHT: 0px
+}
+.blog-associat-tag DT {
+	WIDTH: 86px; FONT: 16px/23px "Microsoft YaHei"
+}
+.blog-tage-red {
+	HEIGHT: 20px; BACKGROUND: #e7e7e7; FLOAT: left; COLOR: #333333; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 14px; MARGIN: 2px 5px 0px; DISPLAY: block; LINE-HEIGHT: 20px; PADDING-RIGHT: 14px; border-radius: 10px
+}
+.blog-tage-red:link {
+	COLOR: #333333
+}
+.blog-tage-red:visited {
+	COLOR: #333333
+}
+.blog-tage-red:hover {
+	BACKGROUND: #cc0000; COLOR: #fff
+}
+.blog-ass-articl {
+	OVERFLOW: hidden; BACKGROUND: #f5f5f5; PADDING-BOTTOM: 20px; PADDING-TOP: 0px; PADDING-LEFT: 20px; CLEAR: both; MARGIN: 0px 0px 10px; PADDING-RIGHT: 20px
+}
+.blog-ass-articl DT {
+	OVERFLOW: visible; HEIGHT: 35px; BORDER-BOTTOM: #cccccc 2px solid; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 16px/35px "Microsoft YaHei"; PADDING-LEFT: 0px; CLEAR: both; MARGIN: 10px 0px 15px; PADDING-RIGHT: 0px
+}
+.blog-ass-articl DT SPAN {
+	HEIGHT: 35px; BORDER-BOTTOM: #cc0000 2px solid; FLOAT: left; DISPLAY: block
+}
+.blog-ass-articl DD {
+	OVERFLOW: hidden; HEIGHT: 23px; WIDTH: 42%; BACKGROUND: url(../images/blog-dot-red3.gif) no-repeat 0px 10px; FLOAT: left; COLOR: #369; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 12px/23px "SimSun"; PADDING-LEFT: 10px; MARGIN: 0px 30px 0px 0px; PADDING-RIGHT: 0px
+}
+.blog-ass-articl DD A:link {
+	COLOR: #000
+}
+.blog-ass-articl DD A:visited {
+	COLOR: #000
+}
+.blog-ass-articl DD A:hover {
+	COLOR: #000
+}
+.blog-ass-articl DD A:hover {
+	TEXT-DECORATION: underline; COLOR: #cc0000
+}
+.details .article_content IMG {
+	MAX-WIDTH: 100%
+}
+.q-reply {
+	BORDER-LEFT-WIDTH: 0px; CURSOR: pointer; HEIGHT: 40px; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; RIGHT: 40px; MIN-WIDTH: 40px; POSITION: fixed; COLOR: #fff; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; LINE-HEIGHT: 16px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px; BOTTOM: 35px; border-radius: 0
+}
+.backtop {
+	BORDER-LEFT-WIDTH: 0px; CURSOR: pointer; HEIGHT: 40px; BORDER-RIGHT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; RIGHT: 40px; MIN-WIDTH: 40px; POSITION: fixed; COLOR: #fff; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; LINE-HEIGHT: 16px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px; BOTTOM: 80px; border-radius: 0
+}
+.glyphicon {
+	FONT-FAMILY: 'Glyphicons Halflings'; POSITION: relative; FONT-WEIGHT: normal; FONT-STYLE: normal; DISPLAY: inline-block; LINE-HEIGHT: 1; TOP: 1px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale
+}

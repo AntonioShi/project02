@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>无标题文档</title>
+<script type=""></script>
+</head>
+
+<body>
+<form method="post" action="/project02/servlet/controlServlet1">
+<table align="center" bordercolor="#0000FF" border="1">
+<tr>
+	<td>
+		<p><font color="#FF0000">请选择功能</font></p>
+		<input type="radio" name="work" value="yz" />用户验证<br />
+		<input type="radio" name="work" value="lr" />用户信息录入<br />
+		<input type="radio" name="work" value="tj" />统计成绩<br />
+	</td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr>
+	<td>
+		<table>
+    	<tr><td>用户验证录入:<br />用户名：<input type="text" name="name"/></td></tr>
+		<tr><td>密码：<input type="password" name="passwd"/></td></tr>
+		</table>
+	</td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr>
+	<td>
+		<table>
+		<tr><td><p style="color:#0000FF">用户信息录入:</p></td></tr>
+		<tr><td>性别：<select name="sex"><option value="nan">男</option>
+										<option value="nv">女</option></select></td></tr>
+		<tr>
+		  <td>爱好<select multiple="multiple" name="interest" size="4">
+		  			<option value="sports">体育</option>
+					<option value="swim">游泳</option>
+					<option value="read">读书</option>
+					<option value="write">写作</option>
+					</select>
+			</td>
+		</tr>
+		<tr><td>简介<textarea cols="20" rows="10" name="introduce"></textarea></td></tr>
+		</table>
+	</td>
+</tr>
+
+<tr><td>&nbsp;</td></tr>
+<tr>
+	<td>
+		<table>
+		<tr><td><p>统计成绩：</p>
+				<p>
+				  <input type="checkbox" name="score" value="english"/>英语&nbsp;&nbsp;&nbsp;
+				  <input type="checkbox" name="score" value="math"/>数学&nbsp;&nbsp;&nbsp;
+				  <input type="checkbox" name="score" value="sports"/>体育&nbsp;&nbsp;&nbsp;
+			  </p>
+				</td></tr>
+		</table>
+	</td>
+</tr>
+
+<tr><th><p></p><input type="submit" name="sub" value="提交"/></th></tr>
+</table>
+</form>
+</body>
+</html>

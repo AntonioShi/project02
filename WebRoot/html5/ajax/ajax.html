@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ajax.html</title>
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../jquery/jquery-2.1.1.min.js"></script>
+    
+	<script>
+		$(document).ready(function(){
+		  	$("#btn1").click(function(){
+		    	$.ajax({
+						type : "POST",  //提交类型
+						url : "/project02/servlet/AjaxRequestServlet",//提交网址
+						data : $("form").serialize(),//收集表单元素的数据
+	                    dataType : "json",//服务器端返回数据的格式
+	                    cache : false,//不缓存
+						error : function(textStatus, errorThrown) {//ajax请求失败时执行（比如服务器关了）
+							alert("系统ajax交互错误: " + textStatus);
+						},
+						success : function(data, textStatus) {	//ajax请求成功并接受到服务器返回信息，其中data中记录了服务器端返回的数据
+							//data是对象，通过它可以访问服务器端返回的数据（均作为data对象的属性）
+							$("#div1").html("name="+data.name+"<br>num="+data.num);
+				      	}
+					});
+		  	});
+		});
+	</script>
+
+  </head>
+  
+  <body>
+	
+	<form>
+		<input type="text" name="name"> 
+		<input type="text" name="num"> 
+		
+		<input type="button" id="btn1" value="提交">
+  </form> 
+  <div id="div1"></div>
+  </body>
+</html>

@@ -1,0 +1,1089 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://blog.csdn.net/zhouguosen_always/article/details/10740017 -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META content="IE=7.0000" 
+http-equiv="X-UA-Compatible">
+<TITLE>java_web学习第二天(ServletConfig和ServletContext对象的作用和使用) - zhouguosen_always的专栏 - 博客频道 - CSDN.NET</TITLE>
+<SCRIPT type=text/javascript charset=utf-8 
+src="ServletConfig和ServletContext对象的作用和使用_files/tracking.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </SCRIPT>
+
+<SCRIPT id=allmobilize charset=utf-8 
+src="ServletConfig和ServletContext对象的作用和使用_files/allmobilize.min.js"></SCRIPT>
+
+<META content=no-siteapp http-equiv=Cache-Control><LINK rel=alternate href="#" 
+media=handheld>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=description 
+content="ServletConfig官方定义：public abstract interface ServletConfigA servlet configuration object used by a servlet container used to pass information to a servlet during initialization.一个servle">
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/jquery.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/ad.js"></SCRIPT>
+<!--new top--><LINK rel=stylesheet 
+href="ServletConfig和ServletContext对象的作用和使用_files/index.css"><!--new top--><LINK 
+rel=Stylesheet type=text/css 
+href="ServletConfig和ServletContext对象的作用和使用_files/style.css"><LINK id=RSSLink 
+title=RSS rel=alternate type=application/rss+xml 
+href="/zhouguosen_always/rss/list"><LINK rel="shortcut icon" 
+href="http://c.csdnimg.cn/public/favicon.ico"><LINK rel=stylesheet type=text/css 
+href="ServletConfig和ServletContext对象的作用和使用_files/default.css">
+<META name=GENERATOR content="MSHTML 11.00.9600.17496"></HEAD>
+<BODY><!--new top-->
+<SCRIPT id=toolbar-tpl-scriptId type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/html.js" skin="black" 
+prod="blog" fixed="true"></SCRIPT>
+<!--new top-->
+<DIV id=container>
+<DIV id=header>
+<DIV class=header>
+<DIV id=blog_title>
+<H2><A 
+href="http://blog.csdn.net/zhouguosen_always">zhouguosen_always的专栏</A></H2>
+<H3></H3>
+<DIV class=clear></DIV></DIV>
+<DIV class=clear></DIV></DIV></DIV>
+<DIV id=navigator>
+<DIV class=navigator_bg></DIV>
+<DIV class=navigator>
+<UL>
+  <LI id=btnContents><A 
+  href="http://blog.csdn.net/zhouguosen_always?viewmode=contents"><SPAN 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])"><IMG 
+  src="ServletConfig和ServletContext对象的作用和使用_files/ico_list.gif">目录视图</SPAN></A> 
+  </LI>
+  <LI id=btnView><A 
+  href="http://blog.csdn.net/zhouguosen_always?viewmode=list"><SPAN 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])"><IMG 
+  src="ServletConfig和ServletContext对象的作用和使用_files/ico_summary.gif">摘要视图</SPAN></A> 
+  </LI>
+  <LI id=btnRss><A href="http://blog.csdn.net/zhouguosen_always/rss/list"><SPAN 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])"><IMG 
+  src="ServletConfig和ServletContext对象的作用和使用_files/ico_rss.gif">订阅</SPAN></A> 
+  </LI></UL></DIV></DIV>
+<SCRIPT type=text/javascript>
+    var username = "zhouguosen_always";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/zhouguosen_always";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</SCRIPT>
+
+<DIV id=body>
+<DIV id=main>
+<DIV class=main>
+<DIV class=ad_class>
+<DIV class="notice tracking-ad" data-mod="popu_3"><A 
+href="http://www.csdn.net/article/2015-04-13/2824462-web"><FONT 
+color=blue>社区之星王海庆：速度激情，学习极客</FONT></A> &nbsp;&nbsp;&nbsp; <A 
+href="http://blog.csdn.net/csdnproduct/article/details/43561659"><FONT 
+color=red>Markdown轻松写博文</FONT></A> &nbsp;&nbsp;&nbsp; <A 
+href="http://edu.csdn.net/course?keywords=%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91"><FONT 
+color=blue>微信公众平台开发 </FONT></A>&nbsp;&nbsp;&nbsp; <A 
+href="http://bbs.csdn.net/topics/391008139"><FONT color=red>天天爱答题 一大波C币袭来 
+</FONT></A>&nbsp;&nbsp;&nbsp; <A 
+href="http://blog.csdn.net/blogdevteam/article/details/44561379"><FONT 
+color=blue>读文章送好书 </FONT></A>&nbsp;&nbsp;&nbsp; </DIV></DIV><LINK rel=stylesheet 
+type=text/css 
+href="ServletConfig和ServletContext对象的作用和使用_files/comment1.css"><LINK 
+rel=stylesheet type=text/css 
+href="ServletConfig和ServletContext对象的作用和使用_files/style1.css">
+<SCRIPT language=JavaScript type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/jquery.cookie.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/main.js"></SCRIPT>
+<LINK rel=stylesheet 
+href="ServletConfig和ServletContext对象的作用和使用_files/markdown_views.css">
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/MathJax.js"></SCRIPT>
+
+<SCRIPT type=text/ecmascript>
+      window.quickReplyflag = true;
+    </SCRIPT>
+
+<DIV id=article_details class=details>
+<DIV class=article_title><SPAN class="ico ico_type_Original"></SPAN>
+<H1><SPAN class=link_title><A 
+href="http://blog.csdn.net/zhouguosen_always/article/details/10740017">java_web学习第二天(ServletConfig和ServletContext对象的作用和使用) 
+</A></SPAN></H1></DIV>
+<DIV class=article_manage><SPAN class=link_categories>分类： <A 
+onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);" 
+href="http://blog.csdn.net/zhouguosen_always/article/category/1571353">java_web</A> 
+</SPAN><SPAN class=link_postdate>2013-08-31 15:45</SPAN> <SPAN title=阅读次数 
+class=link_view>2009人阅读</SPAN> <SPAN title=评论次数 class=link_comments><A 
+onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])" 
+href="http://blog.csdn.net/zhouguosen_always/article/details/10740017#comments">评论</A>(2)</SPAN> 
+<SPAN class=link_collect><A 
+onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shoucang']);collectArticle('java_web学习第二天(ServletConfig和ServletContext对象的作用和使用)','10740017');return false;" 
+title=收藏 href="javascript:void(0);">收藏</A></SPAN> <SPAN class=link_report><A 
+onclick="javascript:_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_jubao']);report(10740017,2);return false;" 
+title=举报 
+href="http://blog.csdn.net/zhouguosen_always/article/details/10740017#report">举报</A></SPAN> 
+</DIV>
+<DIV id=article_content class=article_content><PRE><SPAN style="FONT-SIZE: 18px">ServletConfig</SPAN></PRE><SPAN 
+style="FONT-SIZE: 18px"><BR><BR></SPAN><PRE><SPAN style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px">官方定义：
+public abstract interface ServletConfig
+A servlet configuration object used by a servlet container used to pass information to a servlet during initialization.
+
+
+一个servlet的配置对象，用来给servlet容器传递信息到servlet，在Servlet初始化的时候。
+
+
+ServletConfig的几个方法：
+1.getInitParameter(java.lang.String name) ------&gt;根据name，获取初始化信息
+<SPAN style="WHITE-SPACE: pre"></SPAN>&nbsp;Returns a String containing the value of the named initialization parameter, or null if the parameter does not exist.
+
+
+2.getInitParameterNames() ------&gt;获取所有初始化信息的名称
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Returns the names of the servlet's initialization parameters as an Enumeration of String objects, or an empty Enumeration if the servlet has no initialization parameters.
+
+
+3.getServletContext() ------&gt;获取ServletContext对象<SPAN style="WHITE-SPACE: pre"> </SPAN>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Returns a reference to the ServletContext in which the caller is executing.
+
+
+4.getServletName() ------&gt;获取这个servlet实例的名称
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Returns the name of this servlet instance.
+
+</SPAN></SPAN><P><SPAN style="FONT-SIZE: 18px">例子：</SPAN></P><P><SPAN style="FONT-SIZE: 18px">在web.xml中配置servlet并且设置servlet的初始化信息；</SPAN></P>
+</PRE>
+<P><SPAN style="FONT-SIZE: 18px"></SPAN></P><PRE class=java name="code">&lt;servlet&gt;
+		&lt;servlet-name&gt;Servlet_03&lt;/servlet-name&gt;
+		&lt;servlet-class&gt;com.enterise.always.servlet.Servlet_03&lt;/servlet-class&gt;
+		&lt;init-param&gt;
+			&lt;param-name&gt;name_01&lt;/param-name&gt;
+			&lt;param-value&gt;value_01&lt;/param-value&gt;
+		&lt;/init-param&gt;
+		&lt;init-param&gt;
+			&lt;param-name&gt;name_02&lt;/param-name&gt;
+			&lt;param-value&gt;value_02&lt;/param-value&gt;
+		&lt;/init-param&gt;
+	&lt;/servlet&gt;
+	&lt;servlet-mapping&gt;
+		&lt;servlet-name&gt;Servlet_03&lt;/servlet-name&gt;
+		&lt;url-pattern&gt;/servlet/Servlet_03&lt;/url-pattern&gt;
+	&lt;/servlet-mapping&gt;</PRE><BR>java： 
+<P></P>
+<P><SPAN style="FONT-SIZE: 18px"></SPAN></P><PRE class=java name="code">package com.enterise.always.servlet;
+
+import java.io.IOException;
+import java.util.Enumeration;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Servlet_03 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		
+		doPost(req, resp);
+	}
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		//1.获取ServletConfig对象
+		ServletConfig config = getServletConfig();
+		
+			//1.getInitParameter
+			String para_01 = config.getInitParameter("name_01");
+			String para_02 = config.getInitParameter("name_02");
+			
+			System.out.println("para_01-----------&gt;"+para_01);
+			System.out.println("para_02-----------&gt;"+para_02);
+			
+			//2.getInitParameterNames
+			Enumeration enumeration = config.getInitParameterNames();
+			while(enumeration.hasMoreElements()){
+				String name = (String) enumeration.nextElement();
+				String value = config.getInitParameter(name);
+				System.out.println("name-----------&gt;"+name);
+				System.out.println("value-----------&gt;"+value);
+			}
+			//3.getServletContext
+			ServletContext servletContext = config.getServletContext();
+			System.out.println("servletContext-----------&gt;"+servletContext);
+			//4.getServletName
+			String servletName = config.getServletName();
+			System.out.println("servletName-----------&gt;"+servletName);
+	}
+}
+</PRE><BR>后台打印数据： 
+<P></P>
+<P><SPAN style="FONT-SIZE: 18px"></SPAN></P><PRE class=java name="code">para_01-----------&gt;value_01
+para_02-----------&gt;value_02
+name-----------&gt;name_02
+value-----------&gt;value_02
+name-----------&gt;name_01
+value-----------&gt;value_01
+servletContext-----------&gt;org.apache.catalina.core.ApplicationContextFacade@b398da
+-----------&gt;Servlet_03</PRE><BR>
+<P>例子：</P>
+<P>在servlet创建的时候，获取数据库的链接信息：</P>
+<P>1.在web.xml中配置数据库的连接信息</P>
+<P></P><PRE class=java name="code">&lt;servlet&gt;
+		&lt;servlet-name&gt;Servlet_04&lt;/servlet-name&gt;
+		&lt;servlet-class&gt;com.enterise.always.servlet.Servlet_04&lt;/servlet-class&gt;
+		&lt;init-param&gt;
+			&lt;param-name&gt;driver&lt;/param-name&gt;
+			&lt;param-value&gt;com.mysql.jdbc.driver&lt;/param-value&gt;
+		&lt;/init-param&gt;
+		&lt;init-param&gt;
+			&lt;param-name&gt;url&lt;/param-name&gt;
+			&lt;param-value&gt;jdbc:mysql://localhost:3306/data&lt;/param-value&gt;
+		&lt;/init-param&gt;
+		&lt;init-param&gt;
+			&lt;param-name&gt;user&lt;/param-name&gt;
+			&lt;param-value&gt;root&lt;/param-value&gt;
+		&lt;/init-param&gt;
+		&lt;init-param&gt;
+			&lt;param-name&gt;password&lt;/param-name&gt;
+			&lt;param-value&gt;root&lt;/param-value&gt;
+		&lt;/init-param&gt;
+		&lt;load-on-startup&gt;2&lt;/load-on-startup&gt;
+	&lt;/servlet&gt;</PRE><BR>2.在servlet中获取数据:<PRE class=java name="code">public void init(ServletConfig config) throws ServletException {
+		System.out.println("Servlet_04.init()--2");
+		
+		Enumeration enumeration = config.getInitParameterNames();
+		while(enumeration.hasMoreElements()){
+			String name = (String) enumeration.nextElement();
+			String value = config.getInitParameter(name);
+			
+			System.out.println("name-----------&gt;"+name);
+			System.out.println("value-----------     &gt;"+value);
+		}
+	}</PRE>后台打印数据： 
+<P></P>
+<P></P><PRE class=java name="code">2013-8-31 15:59:36 org.apache.catalina.core.ApplicationContext log
+信息: SessionListener: contextInitialized()
+Servlet_04.init()--2
+name-----------&gt;driver
+value-----------     &gt;com.mysql.jdbc.driver
+name-----------&gt;password
+value-----------     &gt;root
+name-----------&gt;user
+value-----------     &gt;root
+name-----------&gt;url
+value-----------     &gt;jdbc:mysql://localhost:3306/data
+2013-8-31 15:59:36 org.apache.coyote.http11.Http11Protocol start
+信息: Starting Coyote HTTP/1.1 on http-8080
+2013-8-31 15:59:36 org.apache.jk.common.ChannelSocket init
+信息: JK: ajp13 listening on /0.0.0.0:8009
+2013-8-31 15:59:36 org.apache.jk.server.JkMain start
+信息: Jk running ID=0 time=0/22  config=null
+2013-8-31 15:59:36 org.apache.catalina.startup.Catalina start
+信息: Server startup in 738 ms</PRE><BR>从数据打印信息中来看，在servlet创建的时候，就会调用初始化的方法。 
+<P></P>
+<P>原因是在web.xml中配置了：</P>
+<P>&lt;load-on-startup&gt;2&lt;/load-on-startup&gt;<BR></P>
+<P>用途：</P>
+<P>如果在&lt;servlet&gt;元素中配置了一个&lt;load-on-startup&gt;元素，那么WEB应用程序在启动时，就会装载并创建Servlet的实例对象、以及调用Servlet实例对象的init()方法。<BR></P>
+<P>为web应用写一个InitServlet，这个servlet配置为启动时装载，为整个web应用创建必要的数据库表和数据。</P>
+<P></P>
+<P><SPAN 
+style="FONT-SIZE: 18px">如果没有在servlet配置这个参数的话，在装载并创建servlet对象的时候是不会调用init方法的。</SPAN></P>
+<P><SPAN style="FONT-SIZE: 18px"><BR></SPAN></P>
+<P><SPAN 
+style="FONT-SIZE: 18px">----------------------------------------------------------------------------------------------------------------------------------------------------</SPAN></P>
+<P><SPAN style="FONT-SIZE: 18px">ServletContext：<BR><BR><BR></SPAN></P><PRE><SPAN style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px">官方文档定义：</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px">public abstract interface ServletContext</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px">Defines a set of methods that a servlet uses to communicate with its servlet container, for example, to get the MIME type of a file, dispatch requests, or write to a log file.&nbsp;</SPAN><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px">There is one context per "web application" per Java Virtual Machine. (A "web application" is a collection of servlets and content installed under a specific subset of the server's URL namespace such as /catalog and possibly installed via a .war file.)&nbsp;</SPAN><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px">In the case of a web application marked "distributed" in its deployment descriptor, there will be one context instance for each virtual machine. In this situation, the context cannot be used as a location to share global information (because the information won't be truly global). Use an external resource like a database instead.&nbsp;</SPAN><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px">The ServletContext object is contained within the ServletConfig object, which the Web server provides the servlet when the servlet is initialized.&nbsp;</SPAN><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px">安装在一个服务器中的一个特定URL名字空间（比如，/myapplication）下的所有Servlet，JSP，JavaBean等Web部件的集合构成了一个Web的应用，每一个Web应用（同一JVM），容器都会有一个背景对象，而javax.servlet.ServletContext接口就提供了访问这个背景对象的途径。</SPAN><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px">也就是说在整个web应用中，只有一个ServletContext，WEB容器在启动时，它会为每个WEB应用程序都创建一个对应的ServletContext对象，它代表当前web应用。</SPAN><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px">1.获取ServletContext实例：</SPAN><BR style="FONT-SIZE: 18px"><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">	</SPAN>//1.第一种方式</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">		</SPAN>ServletContext servletContext_01 = this.getServletContext();</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">	</SPAN>//2.第二种方式</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">		</SPAN>ServletContext servletContext_02 = this.getServletConfig().getServletContext();</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px">2.利用ServletContext实现数据共享：</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">	</SPAN>在Servlet_03中：</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">	</SPAN>//往servletContext对象中设置数据</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">	</SPAN>ServletContext servletContext = config.getServletContext();</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">	</SPAN>servletContext.setAttribute("name", "共享数据---》");</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">	</SPAN>在Servlet_04中：</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">	</SPAN>//从servletContext对象中获取数据</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">	</SPAN>ServletContext servletContext = getServletConfig().getServletContext();</SPAN><BR style="FONT-SIZE: 18px"><SPAN style="FONT-SIZE: 18px; WHITE-SPACE: pre"></SPAN><SPAN style="FONT-SIZE: 18px"><SPAN style="WHITE-SPACE: pre">	</SPAN>System.out.println("value------------&gt;"+servletContext.getAttribute("name"));</SPAN>
+</SPAN></PRE><SPAN style="FONT-SIZE: 18px"><BR></SPAN>
+<P></P><PRE><SPAN style="FONT-SIZE: 18px">3.在web.xml中配置初始化信息。
+<SPAN style="WHITE-SPACE: pre">	</SPAN>&lt;!-- context的配置信息 --&gt;
+<SPAN style="WHITE-SPACE: pre">	</SPAN>&lt;context-param&gt;
+<SPAN style="WHITE-SPACE: pre">		</SPAN>&lt;param-name&gt;name_param1&lt;/param-name&gt;
+<SPAN style="WHITE-SPACE: pre">		</SPAN>&lt;param-value&gt;value_param1&lt;/param-value&gt;
+<SPAN style="WHITE-SPACE: pre">	</SPAN>&lt;/context-param&gt;
+<SPAN style="WHITE-SPACE: pre">	</SPAN>&lt;context-param&gt;
+<SPAN style="WHITE-SPACE: pre">		</SPAN>&lt;param-name&gt;name_param2&lt;/param-name&gt;
+<SPAN style="WHITE-SPACE: pre">		</SPAN>&lt;param-value&gt;value_param2&lt;/param-value&gt;
+<SPAN style="WHITE-SPACE: pre">	</SPAN>&lt;/context-param&gt;
+
+
+
+
+<SPAN style="WHITE-SPACE: pre">	</SPAN>获取初始化参数
+<SPAN style="WHITE-SPACE: pre">		</SPAN>ServletContext context = this.getServletContext();
+<SPAN style="WHITE-SPACE: pre">		</SPAN>
+<SPAN style="WHITE-SPACE: pre">		</SPAN>Enumeration enumeration = context.getInitParameterNames();
+<SPAN style="WHITE-SPACE: pre">		</SPAN>while(enumeration.hasMoreElements()){
+<SPAN style="WHITE-SPACE: pre">			</SPAN>String name = (String) enumeration.nextElement();
+<SPAN style="WHITE-SPACE: pre">			</SPAN>String value = (String) context.getInitParameter(name);
+<SPAN style="WHITE-SPACE: pre">			</SPAN>
+<SPAN style="WHITE-SPACE: pre">			</SPAN>System.out.println("name--------------&gt;"+name);
+<SPAN style="WHITE-SPACE: pre">			</SPAN>System.out.println("value-----------------&gt;"+value.toString());
+<SPAN style="WHITE-SPACE: pre">		</SPAN>}
+<SPAN style="WHITE-SPACE: pre">	</SPAN>
+
+
+<SPAN style="WHITE-SPACE: pre">	</SPAN>控制台打印数据：
+
+
+<SPAN style="WHITE-SPACE: pre">	</SPAN>name--------------&gt;name_param2
+<SPAN style="WHITE-SPACE: pre">	</SPAN>value-----------------&gt;value_param2
+<SPAN style="WHITE-SPACE: pre">	</SPAN>name--------------&gt;name_param1
+<SPAN style="WHITE-SPACE: pre">	</SPAN>value-----------------&gt;value_param1
+
+
+4.实现servlet的转发
+
+
+<SPAN style="WHITE-SPACE: pre">		</SPAN>//4.实现servlet的转发。
+<SPAN style="WHITE-SPACE: pre">		</SPAN>ServletContext context = this.getServletContext();
+<SPAN style="WHITE-SPACE: pre">		</SPAN>//在request设置参数，然后在jsp界面中获取。
+<SPAN style="WHITE-SPACE: pre">		</SPAN>req.setAttribute("name", "value");
+<SPAN style="WHITE-SPACE: pre">		</SPAN>
+<SPAN style="WHITE-SPACE: pre">		</SPAN>RequestDispatcher requestDispatcher = context.getRequestDispatcher("/index.jsp");
+<SPAN style="WHITE-SPACE: pre">		</SPAN>requestDispatcher.forward(req,resp);
+
+
+<SPAN style="WHITE-SPACE: pre">		</SPAN>在jsp界面获取的数据：
+<SPAN style="WHITE-SPACE: pre">		</SPAN> &lt;%
+&nbsp; &nbsp; <SPAN style="WHITE-SPACE: pre">			</SPAN>String value = (String)request.getAttribute("name");
+&nbsp; &nbsp; <SPAN style="WHITE-SPACE: pre">			</SPAN>System.out.println("value--------------&gt;"+value);
+&nbsp; &nbsp; <SPAN style="WHITE-SPACE: pre">		</SPAN> %&gt;
+</SPAN></PRE><PRE><SPAN style="FONT-SIZE: 18px">5.读取资源的配置文件。
+<SPAN style="WHITE-SPACE: pre">		</SPAN>ServletContext context = this.getServletContext();
+<SPAN style="WHITE-SPACE: pre">		</SPAN>
+<SPAN style="WHITE-SPACE: pre">		</SPAN>InputStream inputStream = context.getResourceAsStream("/db.properties");
+<SPAN style="WHITE-SPACE: pre">		</SPAN>
+<SPAN style="WHITE-SPACE: pre">		</SPAN>ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+<SPAN style="WHITE-SPACE: pre">		</SPAN>byte[] by = new byte[1024];
+<SPAN style="WHITE-SPACE: pre">		</SPAN>int len = 0;
+<SPAN style="WHITE-SPACE: pre">		</SPAN>
+<SPAN style="WHITE-SPACE: pre">		</SPAN>while((len = inputStream.read(by))!= -1){
+<SPAN style="WHITE-SPACE: pre">			</SPAN>outStream.write(by, 0, len);
+<SPAN style="WHITE-SPACE: pre">		</SPAN>}
+<SPAN style="WHITE-SPACE: pre">		</SPAN>
+<SPAN style="WHITE-SPACE: pre">		</SPAN>String content = new String(outStream.toByteArray());
+<SPAN style="WHITE-SPACE: pre">		</SPAN>System.out.println("content-------------&gt;"+content);
+<SPAN style="WHITE-SPACE: pre">		</SPAN>
+<SPAN style="WHITE-SPACE: pre">		</SPAN>outStream.close();
+<SPAN style="WHITE-SPACE: pre">		</SPAN>inputStream.close();
+</SPAN></PRE><SPAN style="FONT-SIZE: 18px"><BR><BR><BR><BR></SPAN>
+<P></P>
+<P><SPAN style="FONT-SIZE: 18px"><BR></SPAN></P>
+<P><SPAN style="FONT-SIZE: 18px"><BR></SPAN></P><SPAN 
+style="FONT-SIZE: 18px"><BR><BR><BR><BR><BR><BR><BR><BR></SPAN><BR></DIV><!-- Baidu Button BEGIN -->
+<DIV class=bdsharebuttonbox style="FLOAT: right"><A class=bds_more 
+style="BACKGROUND-IMAGE: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png); BACKGROUND-POSITION: 0px 0px" 
+href="http://blog.csdn.net/zhouguosen_always/article/details/10740017#" 
+data-cmd="more"></A><A title=分享到QQ空间 class=bds_qzone 
+style="BACKGROUND-POSITION: 0px -52px" 
+href="http://blog.csdn.net/zhouguosen_always/article/details/10740017#" 
+data-cmd="qzone"></A><A title=分享到新浪微博 class=bds_tsina 
+style="BACKGROUND-POSITION: 0px -104px" 
+href="http://blog.csdn.net/zhouguosen_always/article/details/10740017#" 
+data-cmd="tsina"></A><A title=分享到腾讯微博 class=bds_tqq 
+style="BACKGROUND-POSITION: 0px -260px" 
+href="http://blog.csdn.net/zhouguosen_always/article/details/10740017#" 
+data-cmd="tqq"></A><A title=分享到人人网 class=bds_renren 
+style="BACKGROUND-POSITION: 0px -208px" 
+href="http://blog.csdn.net/zhouguosen_always/article/details/10740017#" 
+data-cmd="renren"></A><A title=分享到微信 class=bds_weixin 
+style="BACKGROUND-POSITION: 0px -1612px" 
+href="http://blog.csdn.net/zhouguosen_always/article/details/10740017#" 
+data-cmd="weixin"></A></DIV>
+<SCRIPT>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</SCRIPT>
+<!-- Baidu Button END --><!--192.168.100.36-->
+<UL class=article_next_prev>
+  <LI class=prev_article><SPAN 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/zhouguosen_always/article/details/10727221';">上一篇</SPAN><A 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])" 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/10727221">java_web 
+  学习第一天(Servlet入门)</A> </LI>
+  <LI class=next_article><SPAN 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/zhouguosen_always/article/details/10965389';">下一篇</SPAN><A 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])" 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/10965389">java_web学习第三天(Servlet的事件监听)</A> 
+  </LI></UL><!-- Baidu Button BEGIN -->
+<SCRIPT id=bdshare_js type=text/javascript 
+data="type=tools&amp;uid=1536434"></SCRIPT>
+
+<SCRIPT id=bdshell_js type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</SCRIPT>
+<!-- Baidu Button END --></DIV>
+<DL class=blog-associat-tag>
+  <DT>主题推荐 </DT>
+  <DD><A class=blog-tage-red href="http://www.csdn.net/tag/对象" 
+  target=_blank>对象</A> <A class=blog-tage-red href="http://www.csdn.net/tag/web" 
+  target=_blank>web</A> <A class=blog-tage-red 
+  href="http://www.csdn.net/tag/java" target=_blank>java</A> <A 
+  class=blog-tage-red href="http://www.csdn.net/tag/web应用" 
+  target=_blank>web应用</A> <A class=blog-tage-red 
+  href="http://www.csdn.net/tag/数据库" target=_blank>数据库</A> </DD></DL>
+<STYLE>.blog-ass-articl DD {
+	OVERFLOW: hidden; HEIGHT: 23px; WIDTH: 99%; BACKGROUND: url(../images/blog-dot-red3.gif) no-repeat 0px 10px; FLOAT: left; COLOR: #369; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 12px/23px "SimSun"; PADDING-LEFT: 10px; MARGIN: 0px 30px 0px 0px; PADDING-RIGHT: 0px
+}
+</STYLE>
+
+<DL id=res-relatived class="blog-ass-articl tracking-ad" style="HEIGHT: 160px" 
+data-mod="popu_36">
+  <DT><SPAN>猜你在找</SPAN> 
+  <DIV id=res style="WIDTH: 42%; FLOAT: left; MARGIN-RIGHT: 30px"></DIV>
+  <DIV id=adCollege style="WIDTH: 42%; FLOAT: left"></DIV></DT>
+  <DD 
+  style="BACKGROUND: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0px 10px"><A 
+  title=【精品课程】PHP面向对象设计模式 href="http://edu.csdn.net/course/detail/602" 
+  target=_blank strategy="SearchAlgorithm">【精品课程】PHP面向对象设计模式</A> </DD>
+  <DD 
+  style="BACKGROUND: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0px 10px"><A 
+  title=【精品课程】U3D实时阴影绘制及Shader解决方案 href="http://edu.csdn.net/course/detail/607" 
+  target=_blank strategy="SearchAlgorithm">【精品课程】U3D实时阴影绘制及Shader解决方案</A> </DD>
+  <DD 
+  style="BACKGROUND: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0px 10px"><A 
+  title=【精品课程】开发人员需要掌握的HTML和CSS知识 href="http://edu.csdn.net/course/detail/604" 
+  target=_blank strategy="SearchAlgorithm">【精品课程】开发人员需要掌握的HTML和CSS知识</A> </DD>
+  <DD 
+  style="BACKGROUND: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0px 10px"><A 
+  title=【精品课程】思科路由交换CCIEv5.0最新专题课程组播技术 
+  href="http://edu.csdn.net/course/detail/597" target=_blank 
+  strategy="SearchAlgorithm">【精品课程】思科路由交换CCIEv5.0最新专题课程组播技术</A> </DD>
+  <DD 
+  style="BACKGROUND: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0px 10px"><A 
+  title=【精品课程】C语言基础视频教程 href="http://edu.csdn.net/course/detail/566" 
+  target=_blank strategy="SearchAlgorithm">【精品课程】C语言基础视频教程</A> </DD></DL></DIV>
+<DL></DL>
+<DIV id=job_blog_reco>
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/job_reco.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+         csdn.position.show({
+         sourceType: "blog",
+         tplType: "blogDetail",
+         searchType: "detail",
+         searchKey: "10740017",
+             username: "",
+         containerId: "job_blog_reco"
+        }); 
+    </SCRIPT>
+</DIV>
+<SCRIPT type=text/javascript>
+    var searchtitletags = 'java_web学习第二天(ServletConfig和ServletContext对象的作用和使用)' + ',' + '对象,web,java,web应用,数据库';
+    searchService({
+        index: 'blog',
+        query: searchtitletags,
+        from: 5,
+        size: 5,
+        appendTo: '#res',
+        url: 'recommend',
+        his: 2,
+        client: "blog_cf_enhance",
+        tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+    });
+
+ </SCRIPT>
+
+<DIV id=ad_cen>
+<SCRIPT type=text/javascript>
+              new Ad(4, 'ad_cen');
+          </SCRIPT>
+</DIV>
+<DIV class=comment_class>
+<DIV id=comment_title class=panel_head><SPAN class=see_comment>查看评论</SPAN><A 
+name=comments></A></DIV>
+<DIV id=comment_list></DIV>
+<DIV id=comment_bar></DIV>
+<DIV id=comment_form></DIV>
+<DIV class=announce>* 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<A name=reply></A><A 
+name=quote></A></DIV></DIV>
+<SCRIPT type=text/javascript>
+    var fileName = '10740017';
+    var commentscount = 2;
+    var islock = false
+</SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/comment.js"></SCRIPT>
+
+<DIV id=ad_bot></DIV>
+<SCRIPT type=text/javascript>
+    new Ad(5, 'ad_bot');
+    </SCRIPT>
+
+<DIV id=report_dialog></DIV>
+<DIV id=d-top style="BOTTOM: 60px"><A id=quick-reply title=快速回复 
+class="btn btn-top q-reply" style="DISPLAY: none"><IMG alt=快速回复 
+src="ServletConfig和ServletContext对象的作用和使用_files/blog-icon-reply.png"> </A><A 
+onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" 
+id=d-top-a title=返回顶部 class="btn btn-top backtop" style="DISPLAY: none"><IMG 
+alt=TOP src="ServletConfig和ServletContext对象的作用和使用_files/top.png"> </A></DIV>
+<SCRIPT type=text/javascript>
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);
+        
+        /*
+        if($("#comment_content").length>0)
+        {
+            $("#quick-reply").show();
+
+            $("#quick-reply").click(function(){
+                setEditorFocus();
+            });
+        }       
+     
+        var d_top = $('#d-top-a');
+
+        document.onscroll = function ()
+        {
+            var scrTop = (document.body.scrollTop || document.documentElement.scrollTop);
+            if (scrTop > 500)
+            {
+                d_top.show();
+            } else
+            {
+                d_top.hide();
+            }
+        }
+        $('#d-top-a').click(function ()
+        {
+            scrollTo(0, 0);
+            this.blur();
+            return false;
+        });
+        */
+    });
+  
+</SCRIPT>
+
+<STYLE type=text/css>.tag_list {
+	FONT-SIZE: 12px; BORDER-TOP: #d7cbc1 1px solid; BORDER-RIGHT: #d7cbc1 1px solid; BACKGROUND: #ffffff 0px 0px; BORDER-BOTTOM: #d7cbc1 1px solid; COLOR: #000000; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; PADDING-LEFT: 1px; MARGIN: 10px 2% 0px 1%; BORDER-LEFT: #d7cbc1 1px solid; LIST-STYLE: none none outside; LINE-HEIGHT: 20px; PADDING-RIGHT: 1px
+}
+.tag_list H5 {
+	FONT-SIZE: 12px; HEIGHT: 24px; BACKGROUND: #e0dbd3 0px 0px; COLOR: #47381c; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 5px; MARGIN: 0px; LINE-HEIGHT: 24px; PADDING-RIGHT: 5px
+}
+.tag_list H5 A {
+	COLOR: #47381c
+}
+.classify {
+	PADDING-BOTTOM: 8px; PADDING-TOP: 4px; PADDING-LEFT: 12px; MARGIN: 10px 0px; PADDING-RIGHT: 12px
+}
+.classify A {
+	WHITE-SPACE: nowrap; MARGIN-RIGHT: 20px
+}
+</STYLE>
+
+<DIV class=tag_list>
+<H5><A href="http://www.csdn.net/tag/" target=_blank>核心技术类目</A></H5>
+<DIV class=classify><A onclick=LogClickCount(this,336); title=全部主题 
+href="http://www.csdn.net/tag" target=_blank>全部主题</A> <A 
+onclick=LogClickCount(this,336); title=Hadoop href="http://g.csdn.net/5272865" 
+target=_blank>Hadoop</A> <A onclick=LogClickCount(this,336); title=AWS 
+href="http://g.csdn.net/5272866" target=_blank>AWS</A> <A 
+onclick=LogClickCount(this,336); title=移动游戏 href="http://g.csdn.net/5272870" 
+target=_blank>移动游戏</A> <A onclick=LogClickCount(this,336); title=Java 
+href="http://g.csdn.net/5272871" target=_blank>Java</A> <A 
+onclick=LogClickCount(this,336); title=Android href="http://g.csdn.net/5272872" 
+target=_blank>Android</A> <A onclick=LogClickCount(this,336); title=iOS 
+href="http://g.csdn.net/5272873" target=_blank>iOS</A> <A 
+onclick=LogClickCount(this,336); title=Swift href="http://g.csdn.net/5272868" 
+target=_blank>Swift</A> <A onclick=LogClickCount(this,336); title=智能硬件 
+href="http://g.csdn.net/5272869" target=_blank>智能硬件</A> <A 
+onclick=LogClickCount(this,336); title=Docker href="http://g.csdn.net/5272867" 
+target=_blank>Docker</A> <A onclick=LogClickCount(this,336); title=OpenStack 
+href="http://g.csdn.net/5272925" target=_blank>OpenStack</A> <A 
+onclick=LogClickCount(this,336); title=VPN href="http://www.csdn.net/tag/vpn" 
+target=_blank>VPN</A> <A onclick=LogClickCount(this,336); title=Spark 
+href="http://g.csdn.net/5272924" target=_blank>Spark</A> <A 
+onclick=LogClickCount(this,336); title=ERP href="http://www.csdn.net/tag/erp" 
+target=_blank>ERP</A> <A onclick=LogClickCount(this,336); title=IE10 
+href="http://www.csdn.net/tag/ie10" target=_blank>IE10</A> <A 
+onclick=LogClickCount(this,336); title=Eclipse 
+href="http://www.csdn.net/tag/eclipse" target=_blank>Eclipse</A> <A 
+onclick=LogClickCount(this,336); title=CRM href="http://www.csdn.net/tag/crm" 
+target=_blank>CRM</A> <A onclick=LogClickCount(this,336); title=JavaScript 
+href="http://www.csdn.net/tag/javascript" target=_blank>JavaScript</A> <A 
+onclick=LogClickCount(this,336); title=数据库 href="http://www.csdn.net/tag/数据库" 
+target=_blank>数据库</A> <A onclick=LogClickCount(this,336); title=Ubuntu 
+href="http://www.csdn.net/tag/ubuntu" target=_blank>Ubuntu</A> <A 
+onclick=LogClickCount(this,336); title=NFC href="http://www.csdn.net/tag/nfc" 
+target=_blank>NFC</A> <A onclick=LogClickCount(this,336); title=WAP 
+href="http://www.csdn.net/tag/wap" target=_blank>WAP</A> <A 
+onclick=LogClickCount(this,336); title=jQuery 
+href="http://www.csdn.net/tag/jquery" target=_blank>jQuery</A> <A 
+onclick=LogClickCount(this,336); title=BI href="http://www.csdn.net/tag/bi" 
+target=_blank>BI</A> <A onclick=LogClickCount(this,336); title=HTML5 
+href="http://www.csdn.net/tag/html5" target=_blank>HTML5</A> <A 
+onclick=LogClickCount(this,336); title=Spring 
+href="http://www.csdn.net/tag/spring" target=_blank>Spring</A> <A 
+onclick=LogClickCount(this,336); title=Apache 
+href="http://www.csdn.net/tag/apache" target=_blank>Apache</A> <A 
+onclick=LogClickCount(this,336); title=.NET href="http://www.csdn.net/tag/.net" 
+target=_blank>.NET</A> <A onclick=LogClickCount(this,336); title=API 
+href="http://www.csdn.net/tag/api" target=_blank>API</A> <A 
+onclick=LogClickCount(this,336); title=HTML href="http://www.csdn.net/tag/html" 
+target=_blank>HTML</A> <A onclick=LogClickCount(this,336); title=SDK 
+href="http://www.csdn.net/tag/sdk" target=_blank>SDK</A> <A 
+onclick=LogClickCount(this,336); title=IIS href="http://www.csdn.net/tag/iis" 
+target=_blank>IIS</A> <A onclick=LogClickCount(this,336); title=Fedora 
+href="http://www.csdn.net/tag/fedora" target=_blank>Fedora</A> <A 
+onclick=LogClickCount(this,336); title=XML href="http://www.csdn.net/tag/xml" 
+target=_blank>XML</A> <A onclick=LogClickCount(this,336); title=LBS 
+href="http://www.csdn.net/tag/lbs" target=_blank>LBS</A> <A 
+onclick=LogClickCount(this,336); title=Unity 
+href="http://www.csdn.net/tag/unity" target=_blank>Unity</A> <A 
+onclick=LogClickCount(this,336); title=Splashtop 
+href="http://www.csdn.net/tag/splashtop" target=_blank>Splashtop</A> <A 
+onclick=LogClickCount(this,336); title=UML href="http://www.csdn.net/tag/uml" 
+target=_blank>UML</A> <A onclick=LogClickCount(this,336); title=components 
+href="http://www.csdn.net/tag/components" target=_blank>components</A> <A 
+onclick=LogClickCount(this,336); title="Windows Mobile" 
+href="http://www.csdn.net/tag/windowsmobile" target=_blank>Windows Mobile</A> <A 
+onclick=LogClickCount(this,336); title=Rails 
+href="http://www.csdn.net/tag/rails" target=_blank>Rails</A> <A 
+onclick=LogClickCount(this,336); title=QEMU href="http://www.csdn.net/tag/qemu" 
+target=_blank>QEMU</A> <A onclick=LogClickCount(this,336); title=KDE 
+href="http://www.csdn.net/tag/kde" target=_blank>KDE</A> <A 
+onclick=LogClickCount(this,336); title=Cassandra 
+href="http://www.csdn.net/tag/cassandra" target=_blank>Cassandra</A> <A 
+onclick=LogClickCount(this,336); title=CloudStack 
+href="http://www.csdn.net/tag/cloudstack" target=_blank>CloudStack</A> <A 
+onclick=LogClickCount(this,336); title=FTC href="http://www.csdn.net/tag/ftc" 
+target=_blank>FTC</A> <A onclick=LogClickCount(this,336); title=coremail 
+href="http://www.csdn.net/tag/coremail" target=_blank>coremail</A> <A 
+onclick=LogClickCount(this,336); title="OPhone " 
+href="http://www.csdn.net/tag/ophone" target=_blank>OPhone </A><A 
+onclick=LogClickCount(this,336); title=CouchBase 
+href="http://www.csdn.net/tag/couchbase" target=_blank>CouchBase</A> <A 
+onclick=LogClickCount(this,336); title=云计算 href="http://www.csdn.net/tag/云计算" 
+target=_blank>云计算</A> <A onclick=LogClickCount(this,336); title=iOS6 
+href="http://www.csdn.net/tag/iOS6" target=_blank>iOS6</A> <A 
+onclick=LogClickCount(this,336); title="Rackspace " 
+href="http://www.csdn.net/tag/rackspace" target=_blank>Rackspace </A><A 
+onclick=LogClickCount(this,336); title="Web App" 
+href="http://www.csdn.net/tag/webapp" target=_blank>Web App</A> <A 
+onclick=LogClickCount(this,336); title=SpringSide 
+href="http://www.csdn.net/tag/springside" target=_blank>SpringSide</A> <A 
+onclick=LogClickCount(this,336); title=Maemo 
+href="http://www.csdn.net/tag/maemo" target=_blank>Maemo</A> <A 
+onclick=LogClickCount(this,336); title=Compuware 
+href="http://www.csdn.net/tag/compuware" target=_blank>Compuware</A> <A 
+onclick=LogClickCount(this,336); title=大数据 href="http://www.csdn.net/tag/大数据" 
+target=_blank>大数据</A> <A onclick=LogClickCount(this,336); title=aptech 
+href="http://www.csdn.net/tag/aptech" target=_blank>aptech</A> <A 
+onclick=LogClickCount(this,336); title=Perl href="http://www.csdn.net/tag/perl" 
+target=_blank>Perl</A> <A onclick=LogClickCount(this,336); title=Tornado 
+href="http://www.csdn.net/tag/tornado" target=_blank>Tornado</A> <A 
+onclick=LogClickCount(this,336); title=Ruby href="http://www.csdn.net/tag/ruby" 
+target=_blank>Ruby</A> <A onclick=LogClickCount(this,336); title=Hibernate 
+href="http://www.csdn.net/hibernate" target=_blank>Hibernate</A> <A 
+onclick=LogClickCount(this,336); title=ThinkPHP 
+href="http://www.csdn.net/tag/thinkphp" target=_blank>ThinkPHP</A> <A 
+onclick=LogClickCount(this,336); title=HBase 
+href="http://www.csdn.net/tag/hbase" target=_blank>HBase</A> <A 
+onclick=LogClickCount(this,336); title=Pure href="http://www.csdn.net/tag/pure" 
+target=_blank>Pure</A> <A onclick=LogClickCount(this,336); title=Solr 
+href="http://www.csdn.net/tag/solr" target=_blank>Solr</A> <A 
+onclick=LogClickCount(this,336); title=Angular 
+href="http://www.csdn.net/tag/angular" target=_blank>Angular</A> <A 
+onclick=LogClickCount(this,336); title="Cloud Foundry" 
+href="http://www.csdn.net/tag/cloudfoundry" target=_blank>Cloud Foundry</A> <A 
+onclick=LogClickCount(this,336); title=Redis 
+href="http://www.csdn.net/tag/redis" target=_blank>Redis</A> <A 
+onclick=LogClickCount(this,336); title=Scala 
+href="http://www.csdn.net/tag/scala" target=_blank>Scala</A> <A 
+onclick=LogClickCount(this,336); title=Django 
+href="http://www.csdn.net/tag/django" target=_blank>Django</A> <A 
+onclick=LogClickCount(this,336); title=Bootstrap 
+href="http://www.csdn.net/tag/bootstrap" target=_blank>Bootstrap</A> 
+</DIV></DIV>
+<DIV id=pop_win 
+style="BORDER-TOP: rgb(220,220,220) 1px solid; BORDER-RIGHT: rgb(220,220,220) 1px solid; BACKGROUND: rgb(255,255,255) 0px 0px; BORDER-BOTTOM: rgb(220,220,220) 1px solid; POSITION: absolute; LEFT: 630px; BORDER-LEFT: rgb(220,220,220) 1px solid; Z-INDEX: 10000; DISPLAY: none; TOP: 222px; opacity: 1"></DIV>
+<DIV id=popup_mask></DIV>
+<STYLE>#popup_mask {
+	HEIGHT: 100%; WIDTH: 100%; BACKGROUND: #000; POSITION: absolute; LEFT: 0px; FILTER: alpha(opacity=30); Z-INDEX: 9999; DISPLAY: none; TOP: 0px; opacity: 0.3
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }    
+
+</SCRIPT>
+
+<DIV class=clear></DIV></DIV></DIV>
+<DIV id=side>
+<DIV class=side>
+<DIV id=panel_Profile class=panel>
+<UL class=panel_head><SPAN>个人资料</SPAN></UL>
+<UL class="panel_body profile">
+  <DIV id=blog_userface><A href="http://my.csdn.net/zhouguosen_always" 
+  target=_blank><IMG title=访问我的空间 style="MAX-WIDTH: 90%" 
+  src="ServletConfig和ServletContext对象的作用和使用_files/1_zhouguosen_always.jpg"> 
+  </A><BR><SPAN><A class=user_name href="http://my.csdn.net/zhouguosen_always" 
+  target=_blank>zhouguosen_always</A></SPAN> </DIV>
+  <DIV class=interact><A 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_guanzhu'])" 
+  id=span_add_follow title=[加关注] class=attent href="javascript:void(0);"></A><A 
+  onclick="window.open('http://msg.csdn.net/letters/model?receiver=zhouguosen_always','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])" 
+  title=[发私信] class=letter href="javascript:void(0);"></A></DIV>
+  <DIV id=blog_medal>
+  <DIV id=bms_box></DIV></DIV>
+  <UL id=blog_rank>
+    <LI>访问：<SPAN>29220次</SPAN> 
+    <LI>积分：<SPAN>744</SPAN> 
+    <LI>等级： <SPAN 
+    style="POSITION: relative; Z-INDEX: 1; DISPLAY: inline-block"><IMG 
+    id=leveImg style="VERTICAL-ALIGN: middle" alt="" 
+    src="ServletConfig和ServletContext对象的作用和使用_files/blog3.png"> 
+    <DIV id=smallTittle 
+    style="BORDER-TOP: #dddddd 2px solid; HEIGHT: 32px; BORDER-RIGHT: #dddddd 2px solid; WIDTH: 101px; BORDER-BOTTOM: #dddddd 2px solid; POSITION: absolute; TEXT-ALIGN: center; LEFT: -24px; BORDER-LEFT: #dddddd 2px solid; Z-INDEX: 999; DISPLAY: none; LINE-HEIGHT: 32px; TOP: 25px; BACKGROUND-COLOR: #fff; box-shadow: 0px 2px 2px rgba (0,0,0,0.1)">
+    <DIV 
+    style="HEIGHT: 0px; BORDER-RIGHT: transparent 10px solid; WIDTH: 0px; BORDER-BOTTOM: #eaeaea 8px solid; POSITION: absolute; LEFT: 42%; BORDER-LEFT: transparent 10px solid; TOP: -8px"></DIV>积分：744 
+    </DIV></SPAN>
+    <LI>排名：<SPAN>千里之外</SPAN> </LI></UL>
+  <UL id=blog_statistics>
+    <LI>原创：<SPAN>47篇</SPAN> </LI>
+    <LI>转载：<SPAN>2篇</SPAN> </LI>
+    <LI>译文：<SPAN>1篇</SPAN> </LI>
+    <LI>评论：<SPAN>7条</SPAN> </LI></UL></UL></DIV>
+<DIV id=panel_Search class=panel>
+<UL class=panel_head><SPAN>文章搜索</SPAN></UL>
+<UL class=panel_body>
+  <FORM id=frmSearch class=form_search action=http://so.csdn.net/search 
+  target=_blank><SPAN><INPUT id=inputSearch title=请输入关键字 
+  class=blogsearch></SPAN> <INPUT id=btnSubmit title="search in blog" type=button value=搜索> <INPUT 
+  id=inputQ type=hidden name=q> <INPUT type=hidden value=blog name=t> <A 
+  id=btnSearchBlog target=_blank></A></FORM></UL></DIV>
+<SCRIPT type=text/javascript>
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</SCRIPT>
+
+<DIV id=panel_Category class=panel>
+<UL class=panel_head><SPAN>文章分类</SPAN></UL>
+<UL class=panel_body>
+  <LI><A 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); " 
+  href="http://blog.csdn.net/zhouguosen_always/article/category/1223726">android</A><SPAN>(19)</SPAN> 
+
+  <LI><A 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); " 
+  href="http://blog.csdn.net/zhouguosen_always/article/category/1232706">数据库</A><SPAN>(2)</SPAN> 
+
+  <LI><A 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); " 
+  href="http://blog.csdn.net/zhouguosen_always/article/category/1239593">工具类</A><SPAN>(1)</SPAN> 
+
+  <LI><A 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); " 
+  href="http://blog.csdn.net/zhouguosen_always/article/category/1443301">java_框架</A><SPAN>(3)</SPAN> 
+
+  <LI><A 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); " 
+  href="http://blog.csdn.net/zhouguosen_always/article/category/1571353">java_web</A><SPAN>(13)</SPAN> 
+
+  <LI><A 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); " 
+  href="http://blog.csdn.net/zhouguosen_always/article/category/1656399">java</A><SPAN>(4)</SPAN> 
+
+  <LI><A 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); " 
+  href="http://blog.csdn.net/zhouguosen_always/article/category/1673165">加密算法</A><SPAN>(5)</SPAN> 
+
+  <LI><A 
+  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); " 
+  href="http://blog.csdn.net/zhouguosen_always/article/category/1708381">设计模式(java)</A><SPAN>(1)</SPAN> 
+  </LI></UL></DIV>
+<DIV id=panel_Archive class=panel>
+<UL class=panel_head><SPAN>文章存档</SPAN></UL>
+<UL class=panel_body>
+  <DIV id=archive_list><!--归档统计-->
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/month/2013/11">2013年11月</A><SPAN>(2)</SPAN></LI>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/month/2013/10">2013年10月</A><SPAN>(5)</SPAN></LI>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/month/2013/09">2013年09月</A><SPAN>(15)</SPAN></LI>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/month/2013/08">2013年08月</A><SPAN>(6)</SPAN></LI>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/month/2013/06">2013年06月</A><SPAN>(4)</SPAN></LI>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/month/2013/05">2013年05月</A><SPAN>(2)</SPAN></LI>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/month/2013/01">2013年01月</A><SPAN>(1)</SPAN></LI>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/month/2012/11">2012年11月</A><SPAN>(6)</SPAN></LI>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/month/2012/10">2012年10月</A><SPAN>(1)</SPAN></LI>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/month/2012/09">2012年09月</A><SPAN>(5)</SPAN></LI>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/month/2012/08">2012年08月</A><SPAN>(3)</SPAN> 
+  </LI></DIV></UL></DIV>
+<DIV id=hotarticls class=panel>
+<UL class=panel_head><SPAN>阅读排行 </SPAN></UL>
+<UL class="panel_body itemlist">
+  <LI><A title=android学习之-TextView的滑动效果 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/8950578">android学习之-TextView的滑动效果</A><SPAN>(3673)</SPAN> 
+
+  <LI><A title=android中改变dialog的显示的位置和大小 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/8959590">android中改变dialog的显示的位置和大小</A><SPAN>(2415)</SPAN> 
+
+  <LI><A title=java_web学习第二天(ServletConfig和ServletContext对象的作用和使用) 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/10740017">java_web学习第二天(ServletConfig和ServletContext对象的作用和使用)</A><SPAN>(2004)</SPAN> 
+
+  <LI><A title=java_web学习第四天(request和response的学习) 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/10999589">java_web学习第四天(request和response的学习)</A><SPAN>(1522)</SPAN> 
+
+  <LI><A title=java之_Thread(线程) 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/13623627">java之_Thread(线程)</A><SPAN>(1208)</SPAN> 
+
+  <LI><A title="RSA-SHA1 signature" 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/12067053">RSA-SHA1 
+  signature</A><SPAN>(946)</SPAN> 
+  <LI><A title="java之_队列(PriorityQueue 优先级队列)" 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/16823595">java之_队列(PriorityQueue 
+  优先级队列)</A><SPAN>(769)</SPAN> 
+  <LI><A title=androd学习之-Listview实现头部的刷新和尾部的更多 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/8012939">androd学习之-Listview实现头部的刷新和尾部的更多</A><SPAN>(719)</SPAN> 
+
+  <LI><A title=android学习之-ViewPager 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/9718585">android学习之-ViewPager</A><SPAN>(563)</SPAN> 
+
+  <LI><A title=android学习之-Listview的几种问题 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/8544873">android学习之-Listview的几种问题</A><SPAN>(562)</SPAN> 
+  </LI></UL></DIV>
+<DIV id=hotarticls2 class=panel>
+<UL class=panel_head><SPAN>评论排行</SPAN></UL>
+<UL class="panel_body itemlist">
+  <LI><A title=java_web学习第二天(ServletConfig和ServletContext对象的作用和使用) 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/10740017">java_web学习第二天(ServletConfig和ServletContext对象的作用和使用)</A><SPAN>(2)</SPAN> 
+
+  <LI><A title=java_web学习第十二天(xml的学习) 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/11747039">java_web学习第十二天(xml的学习)</A><SPAN>(1)</SPAN> 
+
+  <LI><A title=android学习之-ListView实现特殊效果 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/7913248">android学习之-ListView实现特殊效果</A><SPAN>(1)</SPAN> 
+
+  <LI><A title=java_web学习第十一天(jdbc数据库驱动------数据库连接池) 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/11645403">java_web学习第十一天(jdbc数据库驱动------数据库连接池)</A><SPAN>(1)</SPAN> 
+
+  <LI><A title=java_web学习第五天(会话-Cookie和Session) 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/11108229">java_web学习第五天(会话-Cookie和Session)</A><SPAN>(1)</SPAN> 
+
+  <LI><A title=android学习之-TabHost 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/8228551">android学习之-TabHost</A><SPAN>(1)</SPAN> 
+
+  <LI><A title=java_web学习第十天(JDBC数据库驱动----分页、事务) 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/11630455">java_web学习第十天(JDBC数据库驱动----分页、事务)</A><SPAN>(0)</SPAN> 
+
+  <LI><A title=java_web学习第九天(JDBC数据库驱动------基础知识) 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/11602059">java_web学习第九天(JDBC数据库驱动------基础知识)</A><SPAN>(0)</SPAN> 
+
+  <LI><A title=java_web学习第八天(EL表达式和JSTL标签库) 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/11571779">java_web学习第八天(EL表达式和JSTL标签库)</A><SPAN>(0)</SPAN> 
+
+  <LI><A title=java_web学习第七天(jsp技术) 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/11526039">java_web学习第七天(jsp技术)</A><SPAN>(0)</SPAN> 
+  </LI></UL></DIV>
+<DIV id=homepageArticles class="panel tracking-ad" data-mod="popu_4">
+<UL class=panel_head><SPAN>推荐文章</SPAN></UL>
+<UL id=ad_commend class=panel_body></UL></DIV>
+<SCRIPT type=text/javascript>
+ new Ad(12, 'ad_commend');
+</SCRIPT>
+
+<DIV id=newcomments class=panel>
+<UL class=panel_head><SPAN>最新评论</SPAN></UL>
+<UL class="panel_body itemlist">
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/10740017#comments">java_web学习第二天(ServletConfig和ServletContext对象的作用和使用)</A> 
+
+  <P style="MARGIN: 0px"><A class=user_name 
+  href="http://blog.csdn.net/gaohe1227">gaohe1227</A>: 有用 </P>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/11108229#comments">java_web学习第五天(会话-Cookie和Session)</A> 
+
+  <P style="MARGIN: 0px"><A class=user_name 
+  href="http://blog.csdn.net/qianxiao120">qianxiao120</A>: 前辈呀 </P>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/11747039#comments">java_web学习第十二天(xml的学习)</A> 
+
+  <P style="MARGIN: 0px"><A class=user_name 
+  href="http://blog.csdn.net/u012978883">u012978883</A>: 
+  太好了，很详细的javaweb教程，重要的点都涉及了。 </P>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/11747039#comments">java_web学习第二天(ServletConfig和ServletContext对象的作用和使用)</A> 
+
+  <P style="MARGIN: 0px"><A class=user_name 
+  href="http://blog.csdn.net/jt61016">jt61016</A>: mark </P>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/11645403#comments">java_web学习第十一天(jdbc数据库驱动------数据库连接池)</A> 
+
+  <P style="MARGIN: 0px"><A class=user_name 
+  href="http://blog.csdn.net/lidanbing">lidanbing</A>: 
+  一口气看完了你的文章，觉得请求转发和重定向那精彩。记住了永远不会忘! </P>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/8228551#comments">android学习之-TabHost</A> 
+
+  <P style="MARGIN: 0px"><A class=user_name 
+  href="http://blog.csdn.net/liu304704565">liu304704565</A>: 顶！！ </P>
+  <LI><A 
+  href="http://blog.csdn.net/zhouguosen_always/article/details/7913248#comments">android学习之-ListView实现特殊效果</A> 
+
+  <P style="MARGIN: 0px"><A class=user_name 
+  href="http://blog.csdn.net/Jolie105020">Jolie105020</A>: 
+  可以把代码发给我吗412895109@qq.com </P></LI></UL></DIV></DIV>
+<DIV class=clear></DIV></DIV>
+<DIV class=clear></DIV></DIV>
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/cnick.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/newblog.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/showblogmedal.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/JavaScript1.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/login.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/counter.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/ad-blog.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/count.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</SCRIPT>
+
+<DIV></DIV><!--new top-->
+<SCRIPT id=csdn-toolbar-id type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/toolbar.js" subCount="5" 
+count="5" wrapId="note1" btnId="header_notice_num"></SCRIPT>
+<!--new top--><LINK rel=stylesheet type=text/css 
+href="ServletConfig和ServletContext对象的作用和使用_files/ask_float_block.css">
+<SCRIPT language=JavaScript type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/wmd.js"></SCRIPT>
+
+<SCRIPT language=JavaScript type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/showdown.js"></SCRIPT>
+
+<SCRIPT language=JavaScript type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/prettify.js"></SCRIPT>
+
+<SCRIPT language=JavaScript type=text/javascript 
+src="ServletConfig和ServletContext对象的作用和使用_files/ask_float_block.js"></SCRIPT>
+</BODY></HTML>

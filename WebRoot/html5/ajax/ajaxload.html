@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../jquery/jquery-2.1.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+	  	$("#btn1").click(function(){
+	    	$('#test').load('/project02/index.jsp');//注意：load的結果是index.jsp的內容（jsp的运行結果）
+	  	});
+	});
+</script>
+</head>
+
+<body>
+
+<h3 id="test">请点击下面的按钮，通过 jQuery AJAX 改变这段文本。</h3>
+<button id="btn1" type="button">获得外部的内容</button>
+
+</body>
+</html>

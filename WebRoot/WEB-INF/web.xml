@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+ 
+ 	<context-param>
+		<param-name>userid</param-name>
+		<param-value>mike</param-value>
+	</context-param>
+  	<context-param>
+		<param-name>userid1</param-name>
+		<param-value>tom</param-value>
+	</context-param>
+ 
+ <servlet>
+	<description>This is the description of my J2EE component</description>
+	<display-name>This is the display name of my J2EE component</display-name>
+	<servlet-name>controlServlet</servlet-name>
+	<servlet-class>controlServlet</servlet-class>
+	<init-param>
+		<param-name>name</param-name>
+		<param-value>zhangshan</param-value>
+	</init-param>
+	<init-param>
+		<param-name>password</param-name>
+		<param-value>123</param-value>
+	</init-param>
+	<init-param>
+		<param-name>english</param-name>
+		<param-value>88</param-value>
+	</init-param>
+	<init-param>
+		<param-name>math</param-name>
+		<param-value>90</param-value>
+	</init-param>
+	<init-param>
+		<param-name>sports</param-name>
+		<param-value>80</param-value>
+	</init-param>
+</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserInformationServlet</servlet-name>
+    <servlet-class>UserInformationServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>controlServlet1</servlet-name>
+    <servlet-class>controlServlet1</servlet-class>
+  <init-param>
+   <param-name>name</param-name>
+   <param-value>zhangshan</param-value>
+  </init-param>
+  <init-param>
+   <param-name>password</param-name>
+   <param-value>123</param-value>
+  </init-param>
+  <init-param>
+   <param-name>english</param-name>
+   <param-value>88</param-value>
+  </init-param>
+  <init-param>
+   <param-name>math</param-name>
+   <param-value>90</param-value>
+  </init-param>
+  <init-param>
+   <param-name>sports</param-name>
+   <param-value>80</param-value>
+  </init-param>    
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>S1</servlet-name>
+    <servlet-class>servlet.S1</servlet-class>
+        <init-param>
+            <param-name>aa</param-name>
+            <param-value>66</param-value>
+        </init-param>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Bss</servlet-name>
+    <servlet-class>servlet.Bss</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>HeaderServlet</servlet-name>
+    <servlet-class>servlet.HeaderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FooterServlet</servlet-name>
+    <servlet-class>servlet.FooterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DispatcherInclude</servlet-name>
+    <servlet-class>servlet.DispatcherInclude</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DispatcherForward</servlet-name>
+    <servlet-class>servlet.DispatcherForward</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DispatcherForwardNext</servlet-name>
+    <servlet-class>servlet.DispatcherForwardNext</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>HideFieldServlet</servlet-name>
+    <servlet-class>HideFieldServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>servlet.SessionServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SessionServlet1</servlet-name>
+    <servlet-class>servlet.SessionServlet1</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SecurityServlet</servlet-name>
+    <servlet-class>servlet.SecurityServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StudentGradeSelectServlet</servlet-name>
+    <servlet-class>studentGradeSelect.StudentGradeSelectServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <servlet-class>servlet.UploadFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadBigFileServlet</servlet-name>
+    <servlet-class>servlet.UploadBigFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadStreamFileServlet</servlet-name>
+    <servlet-class>servlet.UploadStreamFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShjhjServlet</servlet-name>
+    <servlet-class>ShjhjServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AjaxRequestServlet</servlet-name>
+    <servlet-class>html5.AjaxRequestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OfflineServlet</servlet-name>
+    <servlet-class>html5.OfflineServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Adfefe</servlet-name>
+    <servlet-class>servlet.Adfefe</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RServlet</servlet-name>
+    <servlet-class>RServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Deeg</servlet-name>
+    <servlet-class>Deeg</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StudentGradePageServlet</servlet-name>
+    <servlet-class>studentGradeSelect.StudentGradePageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ComputerServlet</servlet-name>
+    <servlet-class>servlet.ComputerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>servlet.CartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GoodsServlet</servlet-name>
+    <servlet-class>servlet.GoodsServlet</servlet-class>
+  </servlet>
+
+<servlet>
+  <servlet-name>InitServlet</servlet-name> 
+  <servlet-class>servlet.InitServlet</servlet-class> 
+  <load-on-startup>1</load-on-startup> 
+</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CartMVCServlet</servlet-name>
+    <servlet-class>servlet.CartMVCServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserManageSecurityServlet</servlet-name>
+    <servlet-class>servlet.UserManageSecurityServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CartDatabaseServlet</servlet-name>
+    <servlet-class>servlet.CartDatabaseServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GoodsDatabaseServlet</servlet-name>
+    <servlet-class>servlet.GoodsDatabaseServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MyServlet</servlet-name>
+    <servlet-class>servlet.MyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ADfef</servlet-name>
+    <servlet-class>servlet.ADfef</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GoodsServlet1</servlet-name>
+    <servlet-class>servlet.advance.GoodsServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <servlet-mapping>
+  <servlet-name>controlServlet</servlet-name>
+  <url-pattern>/servlet/controlServlet</url-pattern>
+ </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserInformationServlet</servlet-name>
+    <url-pattern>/servlet/UserInformationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>controlServlet1</servlet-name>
+    <url-pattern>/servlet/controlServlet1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>S1</servlet-name>
+    <url-pattern>/servlet/S1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Bss</servlet-name>
+    <url-pattern>/servlet/Bss</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HeaderServlet</servlet-name>
+    <url-pattern>/servlet/HeaderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FooterServlet</servlet-name>
+    <url-pattern>/servlet/FooterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DispatcherInclude</servlet-name>
+    <url-pattern>/servlet/DispatcherInclude</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DispatcherForward</servlet-name>
+    <url-pattern>/servlet/DispatcherForward</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DispatcherForwardNext</servlet-name>
+    <url-pattern>/servlet/DispatcherForwardNext</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HideFieldServlet</servlet-name>
+    <url-pattern>/servlet/HideFieldServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/servlet/SessionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SessionServlet1</servlet-name>
+    <url-pattern>/servlet/SessionServlet1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SecurityServlet</servlet-name>
+    <url-pattern>/servlet/SecurityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StudentGradeSelectServlet</servlet-name>
+    <url-pattern>/servlet/StudentGradeSelectServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <url-pattern>/servlet/UploadFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadBigFileServlet</servlet-name>
+    <url-pattern>/servlet/UploadBigFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadStreamFileServlet</servlet-name>
+    <url-pattern>/servlet/UploadStreamFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShjhjServlet</servlet-name>
+    <url-pattern>/servlet/S</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxRequestServlet</servlet-name>
+    <url-pattern>/servlet/AjaxRequestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OfflineServlet</servlet-name>
+    <url-pattern>/servlet/OfflineServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Adfefe</servlet-name>
+    <url-pattern>/servlet/Adfefe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RServlet</servlet-name>
+    <url-pattern>/servlet/RServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Deeg</servlet-name>
+    <url-pattern>/servlet/Deeg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StudentGradePageServlet</servlet-name>
+    <url-pattern>/servlet/StudentGradePageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ComputerServlet</servlet-name>
+    <url-pattern>/servlet/ComputerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/servlet/CartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GoodsServlet</servlet-name>
+    <url-pattern>/servlet/GoodsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartMVCServlet</servlet-name>
+    <url-pattern>/servlet/CartMVCServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserManageSecurityServlet</servlet-name>
+    <url-pattern>/servlet/UserManageSecurityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CartDatabaseServlet</servlet-name>
+    <url-pattern>/servlet/CartDatabaseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GoodsDatabaseServlet</servlet-name>
+    <url-pattern>/servlet/GoodsDatabaseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MyServlet</servlet-name>
+    <url-pattern>/servlet/MyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ADfef</servlet-name>
+    <url-pattern>/servlet/ADfef</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GoodsServlet1</servlet-name>
+    <url-pattern>/servlet/advance/GoodsServlet</url-pattern>
+  </servlet-mapping>
+
+
+ <welcome-file-list>
+  <welcome-file>index.jsp</welcome-file>
+ </welcome-file-list>
+ <login-config>
+  <auth-method>BASIC</auth-method>
+ </login-config>
+ 
+ 
+<!-- 监听器  清除uploadFile控件上传到临时文件夹中的文件 -->
+  <listener>
+    <listener-class>
+      org.apache.commons.fileupload.servlet.FileCleanerCleanup
+    </listener-class>
+  </listener> 
+ 
+ 
+ 
+  <filter>
+    <filter-name>charencode</filter-name>
+    <filter-class>filter.CharEncodingFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+   <filter-name>charencode</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+<filter>
+	<filter-name>SecurityFilter</filter-name>
+	<filter-class>filter.SecurityFilter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>SecurityFilter</filter-name>
+	<url-pattern>/admin/*</url-pattern>
+</filter-mapping>
+
+
+<filter>
+	<filter-name>UserManageFilter</filter-name>
+	<filter-class>filter.UserManageFilter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>UserManageFilter</filter-name>
+	<url-pattern>/servlet/GoodsDatabaseServlet</url-pattern>
+</filter-mapping>
+
+<session-config>
+	<session-timeout>100</session-timeout>
+</session-config>
+
+
+<jsp-config>
+	<taglib>
+		<taglib-uri>/myTagLib</taglib-uri>
+		<taglib-location>/WEB-INF/myTagLib.tld</taglib-location>	
+	</taglib>
+	
+</jsp-config>
+
+<!--HTML5-->  
+<!--     <mime-mapping>  
+        <extension>appcache</extension>  
+        <mime-type>text/cache-manifest</mime-type>  
+    </mime-mapping>   -->
+<!--HTML5--> 
+
+</web-app>
